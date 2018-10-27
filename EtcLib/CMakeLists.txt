@@ -16,9 +16,24 @@ project(EtcLib)
 include_directories(./Etc)
 include_directories(./EtcCodec)
 
-file(GLOB SOURCES
-	${PROJECT_SOURCE_DIR}/Etc/*.h
+file(GLOB HEADERS 
+    ${PROJECT_SOURCE_DIR}/Etc/*.h
 	${PROJECT_SOURCE_DIR}/EtcCodec/*.h
+)
+
+file(GLOB SOURCES
 	${PROJECT_SOURCE_DIR}/Etc/*.cpp
-	${PROJECT_SOURCE_DIR}/EtcCodec/*.cpp)
-ADD_LIBRARY(EtcLib ${SOURCES})
+    ${PROJECT_SOURCE_DIR}/EtcCodec/*.cpp
+)
+
+add_library(EtcLib ${SOURCES} ${HEADERS})
+
+install(
+    FILES ${HEADERS} 
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/include/Etc2"
+)
+
+install(
+    TARGETS EtcLib 
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
+)
