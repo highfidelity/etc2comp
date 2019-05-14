@@ -1,0 +1,5 @@
+etc2comp (1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Seth Alves <seth.alves@gmail.com>  Tue, 14 May 2019 09:10:25 -0700
